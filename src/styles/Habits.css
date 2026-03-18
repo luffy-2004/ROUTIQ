@@ -1,0 +1,135 @@
+/* Habits Page Styles */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.habits-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.habit-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.habit-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.habit-card.completed {
+  border-left: 4px solid #27ae60;
+  background-color: #f0fdf4;
+}
+
+.habit-card.not-completed {
+  border-left: 4px solid #bdc3c7;
+}
+
+.form-container {
+  animation: slideIn 0.3s ease;
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.icon-button {
+  padding: 10px;
+  font-size: 24px;
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #ffffff;
+}
+
+.icon-button:hover {
+  border-color: #3498db;
+  transform: scale(1.05);
+}
+
+.icon-button.selected {
+  background-color: #3498db;
+  border-color: #3498db;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .habits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .add-button {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.habit-card {
+  animation: slideDown 0.3s ease;
+}
+
+/* Success feedback */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.habit-card.completed::before {
+  content: '✓';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #27ae60;
+}
