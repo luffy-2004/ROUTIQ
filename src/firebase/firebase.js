@@ -15,13 +15,7 @@ import { getFirestore } from 'firebase/firestore';
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCAw_o-85YkASif3BQy7eyhGeubzJoXS_0",
-  authDomain: "routiq-756a9.firebaseapp.com",
-  projectId: "routiq-756a9",
-  storageBucket: "routiq-756a9.firebasestorage.app",
-  messagingSenderId: "745684823315",
-  appId: "1:745684823315:web:88a84fe8bb9c9e55273ee6",
-  measurementId: "G-QQKQLZP9JG"
+
 };
 
 // Initialize Firebase
