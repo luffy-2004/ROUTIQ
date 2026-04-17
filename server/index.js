@@ -25,8 +25,8 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/flashcards", flashcardRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  const clientBuildPath = path.join(__dirname, "..", "dist");
+const clientBuildPath = path.join(__dirname, "..", "dist");
+if (fs.existsSync(clientBuildPath)) {
   app.use(express.static(clientBuildPath));
   app.get("*", (req, res) => {
     res.sendFile(path.join(clientBuildPath, "index.html"));
