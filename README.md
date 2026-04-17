@@ -107,6 +107,23 @@ When adding new features:
 3. Keep styling consistent
 4. Update this README if needed
 
+## Deployment
+
+This project is configured for full-stack deployment with the Express backend serving the built React frontend in production.
+
+Recommended deployment steps:
+1. Push the repo to GitHub.
+2. On your chosen host (Render, Railway, etc.), point the service at the repo and use branch `main`.
+3. Set the build command to:
+   - `npm install && npm run build`
+4. Set the start command to:
+   - `npm start`
+5. Add necessary environment variables in the deployment dashboard, for example:
+   - `GEMINI_API_KEY`
+6. If you need a local config file, copy `server/.env.example` to `server/.env` and add your key there.
+
+> Note: `server/.env` is now ignored in git so your API key stays private.
+
 ## License
 
 MIT
