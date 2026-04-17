@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Routiq - Chase Your Goal
 
 An AI-powered habit and task tracking app for students.
