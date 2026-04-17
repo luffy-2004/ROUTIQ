@@ -1,0 +1,215 @@
+/* base variables */
+:root {
+  --primary-color: #667eea;
+  --accent-color: #764ba2;
+  --bg-light: #f3f4f6;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --radius: 8px;
+  --spacing: 16px;
+  --font-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition: all 0.2s ease;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('bck.png') no-repeat center center fixed;
+  color: var(--bg-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transparent-box {
+  background: transparent; /* semi-transparent */
+  backdrop-filter: blur(12px);           /* frosted glass effect */
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px; /* responsive width */
+}
+
+
+#root {
+  min-height: 100vh;
+  background-color: var(--bg-light);
+}
+
+/* layout helpers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing);
+  opacity: 80;
+}
+
+.card {
+  background: transparent;
+  padding: var(--spacing);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: var(--spacing);
+  animation: fadeIn 0.4s ease;
+  transition: var(--transition);
+  color: #1d4ed8 !important;
+}
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+.card, .card h1, .card h2, .card h3, .card h4, .card h5, .card h6, .card p, .card span, .card label, .card li, .card a, .card strong, .card em, .card td, .card th {
+  color: #1d4ed8 !important;
+}
+input, button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1.25rem;
+  background: #2a5298;
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  background: #1e3c72;
+}
+
+/* links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+/* fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* form elements */
+input,
+textarea,
+select {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-base);
+  color: var(--text-dark);
+  margin-top: 0;
+  margin-bottom: calc(var(--spacing)/2);
+}
+
+/* page transition container */
+.page-container {
+  animation: pageFade 0.4s ease;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* app background wrapper */
+.app-bg {
+  /* full viewport fixed background */
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.app-bg > * {
+  position: relative;
+  z-index: 2;
+}
+.app-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.6);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* smooth image transition and fallback */
+.app-bg {
+  transition: background-image 0.5s ease;
+  background-color: #f3f4f6; /* fallback in case image fails */
+}
+
+/* responsive typography */
+@media (max-width: 600px) {
+  body { font-size: 14px; }
+}
+
+/* hide header text on very small screens */
+@media (max-width: 480px) {
+  .logoContainer h2 {
+    display: none;
+  }
+  .logoImg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+/* larger logo on desktop screens */
+.logoImg {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* header transition color change support */
+header {
+  transition: background var(--transition);
+}
+
+/* Home/landing page hero section */
+.home-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: var(--spacing);
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+}
+.home-card {
+  max-width: 600px;
+}
+.home-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing);
+}
+.home-hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing);
+}
